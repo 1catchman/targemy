@@ -1,0 +1,9 @@
+@use '../variables' as *;
+
+.layout {
+  margin-top: $header-height;
+
+  &-wrapper {
+    border-bottom: 1px solid $body-bg-color;
+  }
+}

@@ -1,0 +1,40 @@
+@use '../mixins' as *;
+
+.login {
+  margin: 2rem;
+  width: 460px;
+  padding: 27px 25px 32px 26px;
+  background: #ffffff;
+  box-shadow: 0px 0px 7px 5px rgba(0, 0, 0, 0.138904);
+  border-radius: 25px;
+
+  &-title {
+    height: 46px;
+    margin-bottom: 42px;
+    span {
+      margin-left: 17px;
+      font-size: 26px;
+    }
+  }
+
+  &-form {
+    & label {
+      display: block;
+      margin-left: 14px;
+      margin-bottom: 10px;
+    }
+
+    & input {
+      @include input;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      padding: 12px 15px 13px 15px;
+    }
+  }
+
+  &-submit {
+    margin-top: 21px;
+    height: 45px;
+    font-size: 16px;
+  }
+}

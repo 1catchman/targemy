@@ -1,0 +1,99 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.header {
+  background-color: rgba($color: $bg-color, $alpha: 0.72);
+  max-height: $header-height;
+  height: 100%;
+  width: 100%;
+
+  &-logo {
+    gap: 10px;
+    font-size: 24px;
+  }
+
+  &-search {
+    width: 460px;
+
+    & form {
+      position: relative;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 17px;
+        height: 17px;
+        position: absolute;
+        top: 12px;
+        left: 15px;
+        background-image: url('../../images/icons/search.svg');
+      }
+    }
+
+    & input {
+      @include input;
+      padding: 10px 15px 10px 40px;
+      border-radius: $search-border-radius;
+      font-size: 15px;
+      background-color: $search-bg-color;
+
+      &::placeholder {
+        color: #c6c6c6;
+      }
+    }
+  }
+
+  &-buttons {
+    gap: 15px;
+    margin-left: 50px;
+
+    & button {
+      width: 30px;
+      height: 30px;
+      background-color: $secondary-color;
+      border: none;
+      border-radius: 50%;
+      padding: 0;
+      transition: all 0.2s;
+      position: relative;
+      cursor: pointer;
+
+      & img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      & span {
+        margin-left: 40px;
+        color: #271a3f;
+      }
+
+      &:hover {
+        background-color: #d2e9fa;
+      }
+
+      &:active {
+        background-color: $secondary-color;
+      }
+    }
+  }
+
+  &-avatar {
+    background-color: #f8f8f8;
+    border-radius: 20px;
+    padding: 2px;
+    padding-right: 14px;
+
+    & img {
+      margin-right: 9px;
+      height: 36px;
+      width: 36px;
+    }
+
+    & span {
+      font-size: 15px;
+    }
+  }
+}

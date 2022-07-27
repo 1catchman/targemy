@@ -1,0 +1,29 @@
+@use 'variables' as *;
+
+@mixin avatar($size: 50px) {
+  box-sizing: content-box;
+  height: $size;
+  width: $size;
+  background-color: $skeleton-bg;
+  border: 3px solid transparent;
+  outline: 3px solid;
+  outline-color: #d2e7ff;
+  background-clip: padding-box;
+  margin: 6px;
+
+  & img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+}
+
+@mixin input {
+  border: 1px solid #e9e9e9;
+  outline: none;
+
+  &:focus {
+    border-color: #5333be;
+  }
+}

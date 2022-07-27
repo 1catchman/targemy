@@ -1,0 +1,74 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.comments {
+  background-color: $bg-color;
+  width: 460px;
+  padding: 20px;
+
+  &-amount {
+    gap: 9px;
+    padding: 0 4px 20px;
+    border-bottom: 1px solid $comment-border-wrapper-color;
+    margin-bottom: 30px;
+  }
+
+  &-input input {
+    @include input;
+    height: 40px;
+    width: 100%;
+    border-radius: 24.5px;
+    padding: 10px 20px;
+    font-size: 15px;
+    margin-bottom: 30px;
+
+    &::placeholder {
+      color: #a19bb5;
+    }
+  }
+
+  &-list {
+    margin-bottom: 10px;
+  }
+
+  &-border-wrapper {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid $comment-border-wrapper-color;
+
+    &:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border: none;
+    }
+  }
+
+  &-reply {
+    width: 420px;
+    padding: 20px;
+    background-color: $bg-color-secondary;
+    border-radius: $comment-border-radius;
+  }
+
+  &-text {
+    & p {
+      word-wrap: break-word;
+    }
+  }
+
+  &-panel {
+    margin-bottom: 5px;
+  }
+
+  &-avatar {
+    @include avatar($size: 45px);
+    margin-right: 9px;
+  }
+
+  &-button {
+    margin-left: 19px;
+    button {
+      font-size: 15px;
+    }
+  }
+}
