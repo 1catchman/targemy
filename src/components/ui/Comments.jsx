@@ -10,11 +10,11 @@ export default function Comments() {
   const [totalComments, setTotalComments] = useState([]);
 
   const getMoreComments = () => {
-    let page = comments.length / 2 + 1;
+    let page = Math.floor(comments.length / 2) + 1;
 
     if (!(comments.length >= totalComments)) {
       fetch(
-        `https://api.stage.targemy.com/v1/comments?type=post&filter%5Btype%5D=post&expand=post,card&sort=id&page=${page}&per-page=2`
+        `https://api.stage.targemy.com/v1/comments?type=post&filter%5Bpost_id%5D=3&expand=post,card&sort=id&page=${page}&per-page=2`
       )
         .then((response) => response.json())
         .then((data) => {
@@ -26,12 +26,13 @@ export default function Comments() {
 
   useEffect(() => {
     fetch(
-      'https://api.stage.targemy.com/v1/comments?type=post&filter%5Btype%5D=post&expand=post,card&sort=id&page=1&per-page=4'
+      'https://api.stage.targemy.com/v1/comments?type=post&filter%5Bpost_id%5D=3&expand=post,card&sort=id&page=1&per-page=2'
     )
       .then((response) => response.json())
       .then((data) => {
         setComments(data.items);
         setTotalComments(data._meta.totalCount);
+        console.log(data);
       });
   }, []);
 

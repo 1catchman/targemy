@@ -141,7 +141,10 @@ export default function PostPage() {
             </div>
             <div className="post-text flex flex-column">
               {post.content ? (
-                <p>{post.content}</p>
+                <div
+                  className="post-html"
+                  dangerouslySetInnerHTML={{ __html: post.content }}
+                />
               ) : (
                 [...new Array(3)].map((item, index) => {
                   return (
